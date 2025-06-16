@@ -774,5 +774,3 @@ When JSON extraction fails, the system falls back to natural language parsing us
 - **Constraints**: Creates unique constraints before data loading
 - **MERGE Operations**: Uses MERGE instead of CREATE to handle duplicates
 - **Session Management**: Properly manages Neo4j sessions and connections
-
-This comprehensive flow documentation shows how each function contributes to the overall pipeline, making it easier to understand, debug, and extend the system.
