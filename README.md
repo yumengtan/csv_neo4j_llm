@@ -39,8 +39,9 @@ MODEL_PATH=<path_to_your_llm_model>
 ```
 If you are connecting via Aura DB, Add this import:
 `pip install graphdatascience`
-Then add the following into the script and change your .env file as follows:
+Then add the following into the script 
 `from graphdatascience import GraphDataScience`
+and change your .env file as follows:
 ```
 AURA_CONNECTION_URI = "neo4j+s://xxxxxxxx.databases.neo4j.io"
 AURA_USERNAME = "neo4j"
