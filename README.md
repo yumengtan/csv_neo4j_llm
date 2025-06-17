@@ -38,7 +38,7 @@ NEO4J_DATABASE=neo4j
 MODEL_PATH=<path_to_your_llm_model>
 ```
 
-**Note**: Currently configured for Neo4j Desktop. For Neo4j Aura DB, update the URI and install `pip install graphdatascience`.
+**Note**: Currently configured for Neo4j Desktop. For Neo4j Aura DB, update the URI and install `pip install graphdatascience`. For reference, https://neo4j.com/docs/aura/classic/aurads/connecting/python/
 
 ### Usage
 
