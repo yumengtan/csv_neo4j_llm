@@ -271,47 +271,6 @@ def extract_schema_from_text(df, llm):
 3. **Fallback Parsing**: If JSON fails, uses `extract_natural_language_analysis()`
 4. **Quality Assessment**: Ensures extracted schema meets minimum requirements
 
-### `extract_largest_complete_json(response)`
-
-**Purpose**: Finds and extracts the largest valid JSON object from LLM response
-
-**Flow**:
-1. **Brace Detection**: Locates all opening braces `{` in response
-2. **Bracket Matching**: For each opening brace, finds matching closing brace
-3. **JSON Parsing**: Attempts to parse each potential JSON block
-4. **Size Ranking**: Sorts valid JSON objects by size
-5. **Best Selection**: Returns the largest valid JSON object
-
-```python
-def extract_largest_complete_json(response):
-    brace_positions = [i for i, char in enumerate(response) if char == '{']
-    valid_json_objects = []
-    
-    for start_pos in brace_positions:
-        brace_count = 0
-        # Find matching closing brace
-        for i in range(start_pos, len(response)):
-            if response[i] == '{':
-                brace_count += 1
-            elif response[i] == '}':
-                brace_count -= 1
-                if brace_count == 0:
-                    json_str = response[start_pos:i + 1]
-                    try:
-                        parsed = json.loads(json_str)
-                        valid_json_objects.append({
-                            'size': len(json_str),
-                            'parsed': parsed
-                        })
-                    except json.JSONDecodeError:
-                        pass
-                    break
-    
-    # Return largest valid JSON
-    if valid_json_objects:
-        return max(valid_json_objects, key=lambda x: x['size'])['parsed']
-    return None
-```
 
 ### `validate_extracted_schema(schema_data, df)`
 
@@ -727,24 +686,6 @@ def save_graph_documents_to_neo4j_batch(driver, graph_documents, batch_size=1000
 2. **Deduplication**: Keeps only first occurrence of each key
 3. **List Return**: Returns deduplicated relationship list
 
-## Error Handling and Fallbacks
-
-### Fallback Schema Creation
-When LLM extraction fails:
-```python
-def create_fallback_schema(df):
-    key_candidates = analyze_key_candidates(list(df.columns), df)
-    best_key = key_candidates[0] if key_candidates else df.columns[0]
-    
-    return CSVSchemaExtraction(
-        entities=["Record"],
-        relationships=[],
-        column_mappings={"Record": list(df.columns)},
-        key_columns={"Record": best_key},
-        confidence=0.3,
-        reasoning="Generic fallback - LLM extraction failed"
-    )
-```
 
 ### Natural Language Parsing
 When JSON extraction fails, the system falls back to natural language parsing using regex patterns to extract entities, relationships, and mappings from free-form text.
