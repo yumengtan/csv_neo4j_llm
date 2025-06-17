@@ -58,7 +58,7 @@ from script import process_file
 process_file("data.csv", batch_size=2000)
 ```
 
-## How It Works: Complete Flow
+## How It Works:
 
 ### Overall Architecture
 
