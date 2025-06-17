@@ -1,6 +1,8 @@
 # CSV to Neo4j Knowledge Graph Extraction
 
 A Python script that automatically converts structured data (CSV/Excel files) into Neo4j knowledge graphs using large language models. Currently it connects to local neo4j db. If you want to change to neo4j Aura DB, change the NEO4J URI in .env file. Model used to test was with Qwen2.5-7B.
+Early iteration reference from https://neo4j.com/blog/developer/csv-into-graph-using-llm/
+
 
 ## Overview
 
