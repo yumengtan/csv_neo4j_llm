@@ -17,7 +17,7 @@ A Python script that automatically converts structured data (CSV/Excel files) in
 5. [Core Data Models](#core-data-models)
    - [Schema Structure](#schema-structure)
    - [Graph Output](#graph-output)
-6. [Key Features](#key-features)
+6. [Key Points](#key-points)
    - [Smart Entity Detection](#smart-entity-detection)
    - [Cross-Reference Discovery](#cross-reference-discovery)
    - [Entity Deduplication](#entity-deduplication)
