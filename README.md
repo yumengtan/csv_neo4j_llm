@@ -30,6 +30,21 @@ NEO4J_PASSWORD=<password>
 NEO4J_DATABASE=neo4j
 MODEL_PATH=<model path>
 ```
+*** Note this is currently connected to Neo4j desktop ***
+If you want to connect to Neo4j Aura DB, change the above to the following and pip install `pip install graphdatascience`.
+```
+from graphdatascience import GraphDataScience
+AURA_CONNECTION_URI = "neo4j+s://xxxxxxxx.databases.neo4j.io"
+AURA_USERNAME = "neo4j"
+AURA_PASSWORD = "..."
+
+# Client instantiation
+gds = GraphDataScience(
+    AURA_CONNECTION_URI,
+    auth=(AURA_USERNAME, AURA_PASSWORD),
+    aura_ds=True
+)
+```
 
 ## Usage
 
