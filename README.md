@@ -22,18 +22,6 @@ This tool analyzes tabular data and automatically:
 
 ## Requirements
 
-### Dependencies
-```python
-pandas
-torch
-transformers
-langchain_huggingface
-pydantic
-neo4j
-python-dotenv
-```
-
-### Environment Variables
 Create a `.env` file with:
 ```env
 NEO4J_URI=bolt://localhost:7687
@@ -47,7 +35,7 @@ MODEL_PATH=<model path>
 
 ### Command Line
 ```bash
-python script.py data.csv --batch-size 2000
+python3 neo4j_graph.py <your data file>.csv/xlsx --batch-size 2000
 ```
 
 ### Programmatic Usage
@@ -55,22 +43,20 @@ python script.py data.csv --batch-size 2000
 from script import process_file
 
 # Process a CSV file
-process_file("data.csv", batch_size=2000)
+process_file("<your data file>.csv", batch_size=2000)
 ```
 
 ## How It Works:
 
 ### Overall Architecture
 
-The system follows a pipeline approach with distinct phases:
+The system follows a pipeline approach:
 
 ```
 CSV/Excel → Data Loading → Schema Extraction → Graph Construction → Neo4j Storage
 ```
 
 ### Main Entry Point: `process_file()`
-
-**Purpose**: Orchestrates the entire pipeline from file input to Neo4j storage
 
 **Flow**:
 1. **File Validation**: Checks if file exists and is readable
