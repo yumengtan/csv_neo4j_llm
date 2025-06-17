@@ -17,7 +17,7 @@ This tool analyzes tabular data and automatically:
 
 ## Key Features
 
-- **Intelligent Schema Extraction**: Uses LLM to analyze data structure and suggest optimal entity-relationship models
+- **Schema Extraction through LLM**: Uses LLM to analyze data structure and suggest optimal entity-relationship models
 - **Cross-Reference Detection**: Automatically finds columns that reference other entities
 - **Entity Deduplication**: Ensures unique entities across the entire dataset
 - **Relationship Discovery**: Creates both same-row and cross-row relationships
@@ -28,7 +28,7 @@ This tool analyzes tabular data and automatically:
 
 ### Requirements
 
-Create a `.env` file with your configuration:
+Create a `.env` file:
 
 ```env
 NEO4J_URI=bolt://localhost:7687
@@ -55,7 +55,8 @@ gds = GraphDataScience(
 )
 ```
 
-**Note**: Currently configured for Neo4j Desktop. For Neo4j Aura DB, update the URI and install `pip install graphdatascience`. For reference, https://neo4j.com/docs/aura/classic/aurads/connecting/python/
+**Note**: 
+Currently configured for Neo4j Desktop. For Neo4j Aura DB, update the URI and install `pip install graphdatascience`. For reference, https://neo4j.com/docs/aura/classic/aurads/connecting/python/
 
 ### Usage
 
@@ -72,7 +73,7 @@ process_file("your_data.csv", batch_size=2000)
 
 ## How It Works
 
-The system follows a streamlined 4-phase pipeline:
+The system follows the following pipeline:
 
 ```
 CSV/Excel → Data Analysis → LLM Schema → Graph Build → Neo4j Storage
