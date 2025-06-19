@@ -1,6 +1,6 @@
 # CSV to Neo4j Knowledge Graph Extraction
 
-A Python script that automatically converts structured data (CSV/Excel files) into Neo4j knowledge graphs using large language models. Transforms structured tabular data into rich, interconnected graph databases with intelligent entity and relationship detection. This script transforms structured data into rich, queryable knowledge graphs that reveal hidden patterns and relationships in your data dynamically using LLMs. The automation of knowledge graph generation using LLM allows users not familiar with Cypher Query work with knowledge graphs. Currently the script clears the database first before parsing and adding the structured data into the database.
+A Python script that automatically converts structured data (CSV/Excel files) into Neo4j knowledge graphs using large language models. Transforms structured tabular data into rich, interconnected graph databases with intelligent entity and relationship detection. This script transforms structured data into queryable knowledge graphs that reveal patterns and relationships in your data dynamically using LLMs. The automation of knowledge graph generation using LLM allows users not familiar with Cypher Query work with knowledge graphs. Currently the script clears the database first before parsing and adding the structured data into the database.
 
 ## Table of Contents
 
