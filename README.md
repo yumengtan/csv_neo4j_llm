@@ -101,7 +101,7 @@ process_file("your_data.csv", batch_size=2000)
 The system follows the following pipeline:
 
 ```
-CSV/Excel → Data Analysis → LLM Schema → Graph Build → Neo4j Storage
+CSV/Excel data → Data Analysis → LLM Schema → Graph Build → Neo4j Storage
 ```
 
 ### Phase 1: Smart Data Loading
